@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>image/1.png</file>
+        <file>image/bkt.png</file>
+        <file>image/division.png</file>
+        <file>image/equal.png</file>
+        <file>image/minus.png</file>
+        <file>image/multiplication.png</file>
+        <file>image/percent.png</file>
+        <file>image/plus.png</file>
+        <file>image/plus_minus.png</file>
+    </qresource>
+</RCC>
