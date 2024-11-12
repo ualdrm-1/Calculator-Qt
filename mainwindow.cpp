@@ -127,3 +127,46 @@ void MainWindow::on_Clear_clicked() {
     ui->Multi->setChecked(false);
     ui->Answer->setText("0");
 }
+
+void MainWindow::on_Equil_clicked()
+{
+    double labelNumber, num_second;
+    QString new_label;
+
+    num_second=ui->Answer->text().toDouble();
+
+    if(current_operation== Divide){
+        labelNumber=num_first/num_second;
+        new_label = QString::number(labelNumber, 'g', 7);
+
+        ui->Answer->setText(new_label);
+        ui->Division->setChecked(false); current_operation= None;
+    }else if(current_operation== Add){
+        labelNumber=num_first+num_second;
+        new_label = QString::number(labelNumber, 'g', 7);
+
+        ui->Answer->setText(new_label);
+        ui->Plus->setChecked(false); current_operation= None;
+    }else if(current_operation== Subtract){
+        labelNumber=num_first-num_second;
+        new_label = QString::number(labelNumber, 'g', 7);
+
+        ui->Answer->setText(new_label);
+        ui->Minus->setChecked(false); current_operation= None;
+    }else if(current_operation== Multiply){
+        labelNumber=num_first*num_second;
+        new_label = QString::number(labelNumber, 'g', 7);
+
+        ui->Answer->setText(new_label);
+        ui->Multi->setChecked(false); current_operation= None;
+    }
+}
+
+
+void MainWindow::on_pushButton_Doc_clicked()
+{
+    if(!(ui->Answer->text().contains('.'))){
+        ui->Answer->setText(ui->Answer->text()+".");
+    }
+}
+

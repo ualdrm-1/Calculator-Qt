@@ -25,6 +25,10 @@ private slots:
     void onHoldTimerTimeout();
     void onInputTimerTimeout();
 
+    void on_Equil_clicked();
+
+    void on_pushButton_Doc_clicked();
+
 private:
     Ui::MainWindow *ui;
     double num_first;
