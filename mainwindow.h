@@ -2,33 +2,38 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
 
-QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
 }
-QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
     void digits_numbers();
-    void on_pushButton_Doc_clicked();
     void operations();
-    void on_Equil_clicked();
     void setOperation();
-
+    void on_Equil_pressed();
+    void on_Equil_released();
     void on_Clear_clicked();
+    void onHoldTimerTimeout();
+    void onInputTimerTimeout();
 
 private:
     Ui::MainWindow *ui;
-    double first_number;
-    QString operation;
+    double num_first;
+    enum Operation { None, Add, Subtract, Multiply, Divide };
+    Operation current_operation;
+    QTimer *holdTimer;
+    QTimer *inputTimer;
+    bool isHolding;
+    QString inputBuffer;
 };
+
 #endif // MAINWINDOW_H

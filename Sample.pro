@@ -10,15 +10,18 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    secretwindow.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    secretwindow.h
 
 INCLUDEPATH += "X:\Qt\Sample\build\image"
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    secretWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
